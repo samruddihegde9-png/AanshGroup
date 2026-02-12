@@ -35,9 +35,9 @@ export default function Contact() {
 
                         <div className="space-y-8">
                             {[
-                                { icon: MapPin, title: 'Visit Us', detail: '123 Tech Square, Cyber City, Bangalore' },
+                                { icon: MapPin, title: 'Visit Us', detail: '123 Tech Square, Innovation Park, Cyber City, Bangalore - 560001' },
                                 { icon: Phone, title: 'Call Us', detail: '+91 (800) 123-4567' },
-                                { icon: Mail, title: 'Email Us', detail: 'hello@educetech.in' },
+                                { icon: Mail, title: 'Email Us', detail: 'contact@aanshgroup.com' },
                                 { icon: Clock, title: 'Working Hours', detail: 'Mon - Fri: 9:00 AM - 6:00 PM' },
                             ].map((item, i) => (
                                 <div key={i} className="flex items-start space-x-4">

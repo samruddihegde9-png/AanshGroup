@@ -26,19 +26,19 @@ export default function About() {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-5xl font-bold text-slate-900 mb-8"
                         >
-                            Driving Innovation Through <br />
-                            <span className="text-blue-600">Technical Excellence</span>
+                            The Future Of <br />
+                            <span className="text-blue-600">Secure Living</span>
                         </motion.h3>
                         <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                            Founded with a vision to revolutionize the digital landscape, Educe Technologic is a premier technology agency dedicated to crafting superior digital experiences. We blend creativity with technical prowess to deliver outcomes that drive real business growth.
+                            The future of secure living lies in intelligent integration—where automation, AI surveillance, fire safety, networking, and access control operate as one seamless ecosystem. Modern spaces are no longer defined by walls alone, but by the intelligence that protects and manages them.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                             {[
-                                'Expert Team of Developers',
-                                'Global Delivery Standards',
-                                'Customer-Centric Approach',
-                                'Cutting-Edge Technology',
+                                'AI-Powered Surveillance',
+                                'Smart Automation',
+                                'Seamless Integration',
+                                'Access Control',
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center space-x-3 text-slate-700 font-semibold">
                                     <CheckCircle2 className="w-5 h-5 text-emerald-500" />
@@ -54,7 +54,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-slate-900">Our Mission</h4>
-                                    <p className="text-sm text-slate-500 tracking-tight">To empower brands with scalable digital solutions.</p>
+                                    <p className="text-sm text-slate-500 tracking-tight">To provide comprehensive security solutions that protect lives and property through advanced technology and exceptional service.</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
@@ -63,7 +63,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-slate-900">Our Vision</h4>
-                                    <p className="text-sm text-slate-500 tracking-tight">To be a global leader in innovation and technology.</p>
+                                    <p className="text-sm text-slate-500 tracking-tight">To be the most trusted security partner for homes and businesses across the region.</p>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ export default function About() {
                             <div className="absolute inset-0 flex items-center justify-center p-12">
                                 <div className="text-center text-white">
                                     <Users className="w-24 h-24 mx-auto mb-6 opacity-80" />
-                                    <div className="text-6xl font-black mb-2 tracking-tighter">10+</div>
+                                    <div className="text-6xl font-black mb-2 tracking-tighter">14</div>
                                     <div className="text-xl font-medium uppercase tracking-widest opacity-80">Years of Experience</div>
                                 </div>
                             </div>

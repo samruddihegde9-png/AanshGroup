@@ -8,8 +8,11 @@ import { cn } from '@/lib/utils';
 const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
+    { name: 'Products', href: '#products' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Clients', href: '#clients' },
+    { name: 'Awards', href: '#awards' },
+    { name: 'Careers', href: '#careers' },
     { name: 'Contact', href: '#contact' },
 ];
 
@@ -43,7 +46,7 @@ export default function Header() {
                             "text-2xl font-bold tracking-tight",
                             scrolled ? "text-slate-900" : "text-white"
                         )}>
-                            Educe<span className="text-blue-500">Tech</span>
+                            Aansh<span className="text-blue-500">Group</span>
                         </span>
                     </Link>
 

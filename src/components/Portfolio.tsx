@@ -2,33 +2,36 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-import Link from 'next/link';
+import { ExternalLink, CheckCircle } from 'lucide-react';
 
 const projects = [
     {
-        title: 'E-Commerce Platform',
-        category: 'Web Development',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800',
-        description: 'A full-featured online store with real-time inventory and secure payments.',
+        title: 'Luxury Villa Automation',
+        client: 'Private Client, Bangalore',
+        description: 'Complete smart home integration including lighting, climate, and high-end security.',
+        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
+        tags: ['Automation', 'Security'],
     },
     {
-        title: 'Health & Fitness App',
-        category: 'Mobile App',
-        image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800',
-        description: 'Cross-platform mobile application for personalized workout tracking.',
+        title: 'Corporate Office Security',
+        client: 'Tech Park, Mumbai',
+        description: 'Advanced biometric access control and AI surveillance for a multi-story office.',
+        image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800',
+        tags: ['Security', 'AI'],
     },
     {
-        title: 'Fintech Dashboard',
-        category: 'UI/UX Design',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
-        description: 'Complex data visualization platform for financial analytics and reporting.',
+        title: 'Industrial Fire Safety',
+        client: 'Manufacturing Plant, Pune',
+        description: 'Integration of intelligent fire detection and suppression systems with real-time monitoring.',
+        image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
+        tags: ['Fire Safety', 'Industrial'],
     },
     {
-        title: 'Real Estate Portal',
-        category: 'Web Development',
-        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
-        description: 'Property listing and management system with advanced search filters.',
+        title: 'Smart Apartment Complex',
+        client: 'Prestige Heights',
+        description: 'Community-wide safety network and automated entrance management.',
+        image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800',
+        tags: ['Housing', 'Security'],
     },
 ];
 
@@ -36,65 +39,72 @@ export default function Portfolio() {
     return (
         <section id="portfolio" className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:row justify-between items-end mb-16 gap-8 text-center md:text-left">
-                    <div className="max-w-2xl mx-auto md:mx-0">
+                <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+                    <div className="max-w-2xl text-center md:text-left">
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4"
                         >
-                            Our Portfolio
+                            Our Projects
                         </motion.h2>
                         <motion.h3
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-5xl font-bold text-slate-900"
+                            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
                         >
-                            Delivering Projects That <br />
-                            <span className="text-blue-600">Make An Impact</span>
+                            Delivering Excellence <br />
+                            <span className="text-blue-600">Across Sectors</span>
                         </motion.h3>
+                        <p className="text-lg text-slate-600">
+                            Explore our portfolio of successful implementations where we've transformed
+                            spaces with intelligent security and automation.
+                        </p>
                     </div>
-                    <Link
-                        href="#contact"
-                        className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition-all"
-                    >
-                        Start Your Project
-                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group relative overflow-hidden rounded-[2rem] bg-slate-100 aspect-[16/10]"
+                            className="group relative bg-slate-900 rounded-[2.5rem] overflow-hidden aspect-[16/10] shadow-2xl"
                         >
-                            {/* Image Placeholder with Gradient Overlay */}
-                            <div
-                                className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-                                style={{ backgroundImage: `url(${project.image})` }}
+                            {/* Image with overlay */}
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
 
-                            <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="text-blue-400 font-bold text-sm uppercase tracking-widest mb-2">{project.category}</span>
-                                <h4 className="text-3xl font-bold text-white mb-3 tracking-tight">{project.title}</h4>
-                                <p className="text-slate-300 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">
+                            {/* Content */}
+                            <div className="absolute inset-0 p-8 sm:p-12 flex flex-col justify-end">
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {project.tags.map(tag => (
+                                        <span key={tag} className="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full uppercase tracking-tighter">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                                <h4 className="text-2xl sm:text-3xl font-bold text-white mb-2">{project.title}</h4>
+                                <p className="text-blue-400 font-medium mb-4 flex items-center">
+                                    <CheckCircle className="w-4 h-4 mr-2" />
+                                    {project.client}
+                                </p>
+                                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md group-hover:text-white transition-colors">
                                     {project.description}
                                 </p>
-                                <div className="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-white/20">
-                                        <Github className="w-5 h-5" />
-                                    </button>
-                                    <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-white/20">
-                                        <ExternalLink className="w-5 h-5" />
-                                    </button>
+
+                                <div className="mt-8 flex items-center text-white font-bold group/btn cursor-pointer">
+                                    <span className="border-b-2 border-transparent group-hover/btn:border-blue-500 transition-all">View Case Study</span>
+                                    <ExternalLink className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform text-blue-400" />
                                 </div>
                             </div>
                         </motion.div>

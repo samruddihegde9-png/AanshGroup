@@ -23,18 +23,18 @@ export default function Hero() {
                 >
                     <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
                         <Sparkles className="w-4 h-4 text-blue-400" />
-                        <span className="text-blue-400 text-sm font-medium tracking-wide uppercase">Innovating the Digital Frontier</span>
+                        <span className="text-blue-400 text-sm font-medium tracking-wide uppercase">From Automation To Absolute Security</span>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8">
-                        Next-Gen Tech For <br />
+                        Integrated Intelligence <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-                            Modern Businesses
+                            Complete Protection
                         </span>
                     </h1>
 
                     <p className="max-w-2xl mx-auto text-xl text-slate-400 mb-10 leading-relaxed">
-                        We build high-performance web applications, mobile experiences, and AI-driven solutions that scale with your vision.
+                        To deliver intelligent, integrated and security solutions that enhance safety, efficiency and control for the modern residential and commercial spaces.
                     </p>
 
                     <div className="flex flex-col sm:row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -46,10 +46,10 @@ export default function Hero() {
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
-                            href="#services"
+                            href="#products"
                             className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-2xl font-bold hover:bg-slate-700 transition-all border border-slate-700"
                         >
-                            Explore Services
+                            Explore Solutions
                         </Link>
                     </div>
                 </motion.div>
@@ -64,7 +64,7 @@ export default function Hero() {
                     {[
                         { label: 'Project Success', value: '98%' },
                         { label: 'Active Clients', value: '50+' },
-                        { label: 'Code Quality', value: 'A+' },
+                        { label: 'Product Quality', value: 'A+' },
                         { label: 'Support', value: '24/7' },
                     ].map((stat) => (
                         <div key={stat.label} className="text-center">
