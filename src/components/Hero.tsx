@@ -6,8 +6,24 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const id = href.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-900">
+        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-900">
             {/* Background Orbs */}
             <div className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />
             <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-indigo-600/20 rounded-full blur-[120px] animate-pulse delay-1000" />
@@ -40,6 +56,7 @@ export default function Hero() {
                     <div className="flex flex-col sm:row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                         <Link
                             href="#portfolio"
+                            onClick={(e) => scrollToSection(e as any, '#portfolio')}
                             className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold flex items-center justify-center group hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/25"
                         >
                             View Our Work
@@ -47,6 +64,7 @@ export default function Hero() {
                         </Link>
                         <Link
                             href="#products"
+                            onClick={(e) => scrollToSection(e as any, '#products')}
                             className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-2xl font-bold hover:bg-slate-700 transition-all border border-slate-700"
                         >
                             Explore Solutions

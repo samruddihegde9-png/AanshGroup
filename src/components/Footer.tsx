@@ -5,13 +5,35 @@ import Link from 'next/link';
 import { Rocket, Twitter, Instagram, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const id = (href === '#' || href === '#home') ? 'home' : href.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+    };
+
     return (
         <footer className="bg-slate-900 border-t border-slate-800 pt-20 pb-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Info */}
                     <div className="space-y-6">
-                        <Link href="/" className="flex items-center space-x-2">
+                        <Link
+                            href="#home"
+                            onClick={(e) => scrollToSection(e as any, '#home')}
+                            className="flex items-center space-x-2"
+                        >
                             <div className="bg-blue-600 p-2 rounded-lg">
                                 <Rocket className="w-6 h-6 text-white" />
                             </div>
@@ -35,13 +57,20 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-6">Quick Links</h4>
                         <ul className="space-y-4">
-                            {['Home', 'About Us', 'Products', 'Portfolio', 'Clients', 'Awards', 'Careers', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <Link href={`#${item.toLowerCase().replace(' ', '')}`} className="text-slate-400 hover:text-blue-500 transition-colors">
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
+                            {['Home', 'About Us', 'Products', 'Portfolio', 'Clients', 'Awards', 'Careers', 'Contact'].map((item) => {
+                                const href = `#${item.toLowerCase().replace(' ', '') === 'aboutus' ? 'about' : item.toLowerCase().replace(' ', '')}`;
+                                return (
+                                    <li key={item}>
+                                        <Link
+                                            href={href}
+                                            onClick={(e) => scrollToSection(e as any, href)}
+                                            className="text-slate-400 hover:text-blue-500 transition-colors"
+                                        >
+                                            {item}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
 
